@@ -1,0 +1,6 @@
+[submodule "Logitech-BCC950-PTZ-Lib"]
+	path = Logitech-BCC950-PTZ-Lib
+	url = https://github.com/wuhao-ouyang/Logitech-BCC950-PTZ-Lib.git
+[submodule "websocket-sharp"]
+	path = websocket-sharp
+	url = https://github.com/sta/websocket-sharp.git

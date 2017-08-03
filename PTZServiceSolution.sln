@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "websocket-sharp", "websocket-sharp\websocket-sharp\websocket-sharp.csproj", "{6A7DBB87-9C65-4662-AF02-C6534EDA867F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTZLocalService", "PTZLocalService\PTZLocalService.csproj", "{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTZDevice", "Logitech-BCC950-PTZ-Lib\PTZDevice.csproj", "{7345DC27-7F35-43AD-86B4-6826FC1475BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Ubuntu|Any CPU = Debug_Ubuntu|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release_Ubuntu|Any CPU = Release_Ubuntu|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Debug_Ubuntu|Any CPU.ActiveCfg = Debug_Ubuntu|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Debug_Ubuntu|Any CPU.Build.0 = Debug_Ubuntu|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Release_Ubuntu|Any CPU.ActiveCfg = Release_Ubuntu|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Release_Ubuntu|Any CPU.Build.0 = Release_Ubuntu|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7DBB87-9C65-4662-AF02-C6534EDA867F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Debug_Ubuntu|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Debug_Ubuntu|Any CPU.Build.0 = Debug|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Release_Ubuntu|Any CPU.ActiveCfg = Release|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Release_Ubuntu|Any CPU.Build.0 = Release|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B50BD9-EA7D-45B7-B1BC-AFEC8C9E4EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Debug_Ubuntu|Any CPU.ActiveCfg = Debug|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Debug_Ubuntu|Any CPU.Build.0 = Debug|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Release_Ubuntu|Any CPU.ActiveCfg = Release|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Release_Ubuntu|Any CPU.Build.0 = Release|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7345DC27-7F35-43AD-86B4-6826FC1475BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = websocket-sharp\websocket-sharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal
