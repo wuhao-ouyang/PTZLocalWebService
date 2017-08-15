@@ -5,6 +5,7 @@ using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 using PTZ;
 using System.ServiceProcess;
+using System.Text.RegularExpressions;
 
 namespace PTZLocalService
 {

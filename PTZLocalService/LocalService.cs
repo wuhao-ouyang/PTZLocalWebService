@@ -13,6 +13,7 @@ using WebSocketSharp;
 using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 using PTZ;
+using System.Text.RegularExpressions;
 
 namespace PTZLocalService
 {
@@ -29,7 +30,7 @@ namespace PTZLocalService
 
         protected override void OnStart(string[] args)
         {
-            PTZDevice device;
+            PTZDevice device = null;
             httpsv = new HttpServer(4649);
 
             httpsv.OnGet += (sender, e) =>
@@ -38,20 +39,72 @@ namespace PTZLocalService
                 HttpListenerResponse res = e.Response;
 
                 string msg = "";
-                if (req.QueryString.ToString().Contains("init"))
+                string query = req.QueryString.ToString();
+                if (query.Contains("init"))
                 {
+                    Match match = Regex.Match(query, "init=(.+)");
+                    string deviceName = match.Groups[1].Captures[0].ToString();
                     try
                     {
-                        device = PTZDevice.GetDevice("BCC950 ConferenceCam", PTZType.Relative);
+                        device = PTZDevice.GetDevice(deviceName, PTZType.Relative);
+                        msg = "Device created";
+                        res.StatusCode = (int)HttpStatusCode.OK;
                     }
                     catch (Exception ex)
                     {
                         msg = ex.Message;
+                        res.StatusCode = (int)HttpStatusCode.InternalServerError;
                     }
                 }
+                else if (query.Contains("action"))
+                {
+                    if (device == null)
+                    {
+                        msg = "Device must be initialized before using";
+                        res.StatusCode = (int)HttpStatusCode.BadRequest;
+                    }
+                    else
+                    {
+                        Match match = Regex.Match(query, "action=(.+)");
+                        string action = match.Groups[1].Captures[0].ToString();
+                        if (action.Equals("move_left"))
+                        {
+                            device.Move(-1, 0);
+                        }
+                        else if (action.Equals("move_right"))
+                        {
+                            device.Move(1, 0);
+                        }
+                        else if (action.Equals("move_up"))
+                        {
+                            device.Move(0, -1);
+                        }
+                        else if (action.Equals("move_down"))
+                        {
+                            device.Move(0, 1);
+                        }
+                        else if(action.Equals("zoom_in"))
+                        {
+                            device.Zoom(1);
+                        }
+                        else if (action.Equals("zoom_out"))
+                        {
+                            device.Zoom(-1);
+                        }
+                        else
+                        {
+                            msg = "Unsupported action: " + action;
+                            res.StatusCode = (int)HttpStatusCode.BadRequest;
+                        }
+                    }
+                }
+                else
+                {
+                    msg = "Invalida request";
+                    res.StatusCode = (int)HttpStatusCode.BadRequest;
+                }
 
-                string json = "{\"result\":\"" + msg + "\", \"query\":\"" + req.QueryString + "\"}";
-                res.StatusCode = (int)HttpStatusCode.OK;
+                string json = "{\"message\":\"" + msg + "\", \"query\":\"" + req.QueryString + "\"}";
                 res.ContentType = "application/json";
                 res.ContentEncoding = Encoding.UTF8;
 
